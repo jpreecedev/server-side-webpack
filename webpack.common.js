@@ -7,7 +7,9 @@ module.exports = {
     filename: '[name].js'
   },
   devServer: {
-    port: 9955
+    port: 9955,
+    hot: true,
+    publicPath: '/'
   },
   devtool: 'source-map',
   module: {
@@ -37,6 +39,7 @@ module.exports = {
       'window.react': 'React',
       'window.React': 'React'
     }),
-    new webpack.NamedModulesPlugin()
+    new webpack.NamedModulesPlugin(),
+    new webpack.HotModuleReplacementPlugin()
   ]
 }
