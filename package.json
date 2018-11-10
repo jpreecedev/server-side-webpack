@@ -15,8 +15,7 @@
   "homepage": "https://github.com/jpreecedev/server-side-webpack#readme",
   "scripts": {
     "start": "npm run build && node ./dist/server/main.js",
-    "start:server": "babel-node ./src/server/index.jsx",
-    "build": "webpack --config ./webpack.config.js"
+    "start:server": "webpack --config ./webpack.server.js && node ./dist/server/main.js"
   },
   "devDependencies": {
     "@babel/core": "^7.1.2",
