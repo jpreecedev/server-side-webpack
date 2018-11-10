@@ -6,7 +6,7 @@ import express from 'express'
 import { renderToString } from 'react-dom/server'
 
 import App from '../client/App'
-import config, { output } from '../../webpack.client'
+import config from '../../webpack.client'
 
 const app = express()
 const compiler = webpack(config)
@@ -17,11 +17,13 @@ app.set('view engine', 'ejs')
 
 app.use(
   require('webpack-dev-middleware')(compiler, {
-    publicPath: output.publicPath
+    publicPath: config.output.publicPath
   })
 )
 
 app.use(require('webpack-hot-middleware')(compiler))
+
+// app.use(require('webpack-hot-server-middleware')(compiler))
 
 app.get('/*', (req, res) => {
   res.render('pages/index', {
