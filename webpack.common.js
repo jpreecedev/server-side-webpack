@@ -6,11 +6,6 @@ module.exports = {
   output: {
     filename: '[name].js'
   },
-  devServer: {
-    port: 9955,
-    hot: true,
-    publicPath: '/'
-  },
   devtool: 'source-map',
   module: {
     rules: [

@@ -3,6 +3,7 @@ const merge = require('webpack-merge')
 const common = require('./webpack.common')
 
 module.exports = merge(common, {
+  name: 'server',
   target: 'node',
   externals: nodeExternals(),
   entry: {
