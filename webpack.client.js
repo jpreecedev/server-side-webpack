@@ -5,7 +5,7 @@ module.exports = merge(common, {
   name: 'client',
   target: 'web',
   entry: {
-    main: ['./src/client/index.jsx']
+    main: ['webpack-hot-middleware/client', './src/client/index.jsx']
   },
   output: {
     filename: './client/[name].js'

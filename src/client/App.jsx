@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { hot } from 'react-hot-loader'
 
 function App() {
   return (
@@ -15,4 +16,4 @@ if (module.hot) {
   module.hot.accept()
 }
 
-export default App
+export default hot(module)(App)
